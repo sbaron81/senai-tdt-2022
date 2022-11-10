@@ -13,6 +13,9 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
-    
-      - name: Build the stack
-        run: docker-compose up -d
+
+      - name: Remove all container
+        run: docker container rm -f $(docker container ps -a -q)
+
+      - name: Run container
+        run: docker -d -p 8080:80 --name webserver sidneibaron/senai-tdt:latest

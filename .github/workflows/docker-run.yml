@@ -18,4 +18,4 @@ jobs:
         run: docker container rm -f $(docker container ps -a -q) || echo "Nenhum container"
 
       - name: Run container
-        run: docker -d -p 8080:80 --name webserver sidneibaron/senai-tdt:latest
+        run: docker run -d -p 8080:80 --name webserver sidneibaron/senai-tdt:latest

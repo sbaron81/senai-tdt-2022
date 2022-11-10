@@ -8,7 +8,7 @@ on:
 #      - 'master'
 
 jobs:
-  build-docker:
+  run-docker:
     runs-on: self-hosted
 
     steps:

@@ -14,6 +14,9 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
+      - name: Download docker image
+        run: docker pull sidneibaron/senai-tdt:latest
+
       - name: Remove all container
         run: docker container rm -f $(docker container ps -a -q) || echo "Nenhum container"
 
